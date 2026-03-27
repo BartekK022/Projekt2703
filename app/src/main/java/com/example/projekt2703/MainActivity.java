@@ -1,6 +1,9 @@
 package com.example.projekt2703;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -35,6 +38,20 @@ public class MainActivity extends AppCompatActivity {
         arrayListowoce.add("truskawski");
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,arrayListowoce);
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                      //zmienia kolor jak nacisniesz:
+                        // view.setBackgroundColor(Color.GREEN);
+                        //usuwa rekord jak go nacisniesz:
+                        arrayListowoce.remove(position);
+                        arrayAdapter.notifyDataSetChanged();
+
+                    }
+                }
+        );
 
     }
 }
