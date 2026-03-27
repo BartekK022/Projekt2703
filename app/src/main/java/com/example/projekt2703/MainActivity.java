@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    EditText editText;
+    Button button;
 
     ListView listView;
     //moze byc konieczny import klasy ListView
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listView);
+        editText = findViewById(R.id.editTextText);
+        button = findViewById(R.id.button);
         arrayListowoce = new ArrayList<>();
         arrayListowoce.add("banan");
         arrayListowoce.add("arbuz");
@@ -49,6 +55,17 @@ public class MainActivity extends AppCompatActivity {
                         arrayListowoce.remove(position);
                         arrayAdapter.notifyDataSetChanged();
 
+                    }
+                }
+        );
+
+        button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String owoc = editText.getText().toString();
+                        arrayListowoce.add(owoc);
+                        arrayAdapter.notifyDataSetChanged();
                     }
                 }
         );
