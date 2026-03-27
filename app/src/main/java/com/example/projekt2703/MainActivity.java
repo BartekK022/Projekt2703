@@ -15,8 +15,11 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
+    //moze byc konieczny import klasy ListView
     ArrayList<String> arrayListowoce;
     ArrayAdapter<String> arrayAdapter;
+
+    //lista w strings.xml!!! na dwa
 
 
     @Override
