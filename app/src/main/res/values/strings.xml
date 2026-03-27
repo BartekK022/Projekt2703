@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Projekt2703</string>
+    <string-array name="warzywka">
+        <item>pomidor</item>
+        <item>ogórek</item>
+        <item>marchewka</item>
+        <item>kalafior</item>
+    </string-array>
 </resources>
